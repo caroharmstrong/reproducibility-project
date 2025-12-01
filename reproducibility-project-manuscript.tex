@@ -208,33 +208,47 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \begin{document}
 \maketitle
 
+{[}Insert intro here - 500 words{]}
+
 \section{Methods}\label{methods}
 
 \subsection{Participants}\label{participants}
 
 Participants will be 400 university students enrolled in a Psychology course who opt to participate in a brief online survey for course credit.
 
-\subsection{Material}\label{material}
+\subsection{Measures}\label{measures}
 
 \subsubsection{Demographics}\label{demographics}
 
+Participants will be asked to indicate their age and gender. The exact questions and additional details are shown in Appendix A.
+
 \subsubsection{Big Five Inventory---Neuroticism Subscale}\label{big-five-inventoryneuroticism-subscale}
 
-\subsubsection{Loneliness in Context Scale}\label{loneliness-in-context-scale}
+The Big Five Inventory---Neuroticism subscale (John et al., 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = Agree strongly, with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items are shown in Appendix B.
+
+{[}Add scoring info{]}
+
+\subsubsection{Loneliness in Context Survey}\label{loneliness-in-context-survey}
+
+The Loneliness in Context Survey asks participants to indicate the frequency with which they feel lonely in various daily or weekly contexts. Ten items tap different contexts (e.g., ``I am lonely in the evening;'' ``I feel sad and alone at social events''), and participants respond on an ordinal scale ranging from 1 = ``Never'' to 5 = ``Always,'' with the intermediate response options being 2 = ``Hardly ever,'' 3 = ``Sometimes,'' and 4 = ``Most of the time.'' An eleventh item asks participants to indicate the level of loneliness that they feel when they do feel lonely, ranging from 1 = ``Slightly lonely'' to 5 = ``Painfully lonely,'' with one available option as 0 = ``I never feel lonely'' and the intermediate response options being 2 = ``Somewhat lonely,'' 3 = ``Very lonely,'' and 4 = ``Extremely lonely.'' The complete scale instructions and items are shown in Appendix C.
+
+{[}Add scoring info{]}
 
 \subsection{Procedure}\label{procedure}
+
+The online survey will be developed and administered via Qualtrics. Potential participants will be informed about the study via online communications from the university's Psychology Department and may choose to complete the study from their personal device at any time during the current academic semester.
 
 Participants will provide informed consent by indicating that they would like to proceed to the survey questions after reading a brief written explanation (on the first page of the Qualtrics survey) describing what they will be asked to do (i.e., complete an approximately five-minute survey asking them about their personality and mental state) and the possible risks (i.e., experiencing various forms of psychological discomfort while reflecting on oneself and one's feelings) and benefits (i.e., possible improvements in scientific knowledge) of their participation.
 
 Of note, the consent will include a clause indicating that participants' de-identified data (i.e., their responses to all survey questions, including demographic information, but NOT including any information such as IP addresses that could be used to identify them) may be used by other researchers for any purpose and shared on an online, publicly available platform.
 
-Participants who affirm their consent will proceed to the survey questions. All participants will complete the Demographic questions first. To control for possible order effects, participants will be randomized to complete either the Big Five Inventory---Neuroticism subscale or the Loneliness in Context Scale second. The third section will consist of whichever measure participants did not complete second.
+Participants who affirm their consent will proceed to the survey questions. All participants will complete the Demographic questions first. To control for possible order effects, participants will be randomized to complete either the Big Five Inventory---Neuroticism subscale or the Loneliness in Context Survey second. The third section will consist of whichever measure participants did not complete second.
 
 Following the survey questions, participants will view a short debriefing description indicating the study aim and providing information about campus mental health resources that may be of aid if participants found that reflecting on their mental state and day-to-day loneliness caused distress or prompted them to think about seeking psychological help.
 
 \subsection{Data analysis}\label{data-analysis}
 
-We will
+A correlation test will be conducted to compute Pearson's \emph{r} for the association between \texttt{neuroticism} and \texttt{loneliness}. Using the \texttt{psych} package (CITE), we will test the hypothesis that the correlation between \texttt{neuroticism} and \texttt{loneliness} is significantly (\(\alpha\) = .001) greater than \emph{r} = .30 in this sample.
 
 \section{Results}\label{results}
 
@@ -243,6 +257,58 @@ We will
 \section{References}\label{references}
 
 \phantomsection\label{refs}
+
+\section{Appendix A}\label{appendix-a}
+
+\subsection{Demographics}\label{demographics-1}
+
+Participants will be asked the following two demographic questions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  What is your current age in years?
+\item
+  How would you describe your gender?
+\end{enumerate}
+
+The first question will be a free text response with data validation to ensure that a two-digit integer is entered. The second question will have three possible answer choices, one of which may be selected: (1) Man, (2) Woman, (3) Nonbinary or genderqueer.
+
+\section{Appendix B}\label{appendix-b}
+
+\subsection{Big Five Inventory: Neuroticism Subscale (John et al., 1991)}\label{big-five-inventory-neuroticism-subscale-john-et-al.-1991}
+
+Instructions: \emph{In this section, you will read a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who is talkative? Consider how you think and feel in everyday life and indicate how much you agree or disagree with each statement. Remember that there are no right or wrong answers because people think and feel very differently from one another. Just read each question carefully and answer honestly.}
+
+I see myself as someone who\ldots{}
+
+Is depressed, blue
+Is relaxed, handles stress well
+Can be tense
+Worries a lot
+Is emotionally stable, not easily upset
+Can be moody
+Remains calm in tense situations
+Gets nervous easily
+
+\section{Appendix C}\label{appendix-c}
+
+\subsection{Loneliness in Context Survey (Asher et al., 2009)}\label{loneliness-in-context-survey-asher-et-al.-2009}
+
+Instructions: \emph{Sometimes people can feel lonely in their day-to-day lives. The items in this section ask about your feelings in different contexts. On the scale directly below/beside each item indicate how often you feel the way the item describes. There are no right or wrong answers because people can feel very differently from one another. Just describe how you feel in these contexts (1 = Never, 2 = Hardly Ever, 3 = Sometimes, 4 = Most of the Time, 5 = Always).}
+
+Class is a lonely place for me.\\
+I am lonely in the evening.
+My place of residence is a lonely place for me.
+My free time is a lonely time for me.
+I feel sad and alone on weekends.
+I am lonely with other people.
+I feel sad and alone at social events.
+I am lonely during meal times.
+I feel sad and alone when I am studying.
+Bedtime is a lonely time for me.
+
+When you do feel lonely, how lonely do you feel? \emph{(0 = I never feel lonely, 1 = Slightly lonely, 2 = Somewhat lonely, 3 = Very lonely, 4 = Extremely lonely, 5 = Painfully lonely)}
 
 
 \end{document}
