@@ -95,8 +95,9 @@ Participants who affirm their consent will proceed to the survey questions. All 
 Following the survey questions, participants will view a short debriefing description indicating the study aim and providing information about campus mental health resources that may be of aid if participants found that reflecting on their mental state and day-to-day loneliness caused distress or prompted them to think about seeking psychological help. 
 
 ## Data analysis
-A correlation test will be conducted to compute Pearson's *r* for the association between `neuroticism` and `loneliness`. Using the `psych` package (CITE), we will test the hypothesis that the correlation between `neuroticism` and `loneliness` is significantly ($\alpha$ = .001) greater than *r* = .30 in this sample.   
+Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and race, counts and proportions.
 
+Using the `psych` package, we will compute Pearson's *r* for the association between `neuroticism` and `loneliness` and test the hypothesis that the correlation between `neuroticism` and `loneliness` is significantly ($\alpha$ = .001) greater than *r* = .30 in this sample. 
 
 # Results
 
