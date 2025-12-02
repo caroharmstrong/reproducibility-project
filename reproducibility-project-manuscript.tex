@@ -220,19 +220,19 @@ Participants will be 400 university students enrolled in a Psychology course who
 
 \subsubsection{Demographics}\label{demographics}
 
-Participants will be asked to indicate their age and gender. The exact questions and additional details are shown in Appendix A.
+Participants will be asked to indicate their age, gender, and racial and ethnic background. The exact questions and further details are shown in Appendix A.
 
 \subsubsection{Big Five Inventory---Neuroticism Subscale}\label{big-five-inventoryneuroticism-subscale}
 
 The Big Five Inventory---Neuroticism subscale (John et al., 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = Agree strongly, with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items are shown in Appendix B.
 
-{[}Add scoring info{]}
+A composite score is computed by summing the eight items.
 
-\subsubsection{Loneliness in Context Survey}\label{loneliness-in-context-survey}
+\subsubsection{Loneliness in Context Questionnaire for College Students}\label{loneliness-in-context-questionnaire-for-college-students}
 
-The Loneliness in Context Survey asks participants to indicate the frequency with which they feel lonely in various daily or weekly contexts. Ten items tap different contexts (e.g., ``I am lonely in the evening;'' ``I feel sad and alone at social events''), and participants respond on an ordinal scale ranging from 1 = ``Never'' to 5 = ``Always,'' with the intermediate response options being 2 = ``Hardly ever,'' 3 = ``Sometimes,'' and 4 = ``Most of the time.'' An eleventh item asks participants to indicate the level of loneliness that they feel when they do feel lonely, ranging from 1 = ``Slightly lonely'' to 5 = ``Painfully lonely,'' with one available option as 0 = ``I never feel lonely'' and the intermediate response options being 2 = ``Somewhat lonely,'' 3 = ``Very lonely,'' and 4 = ``Extremely lonely.'' The complete scale instructions and items are shown in Appendix C.
+The Loneliness in Context Questionnaire for College Students (Asher \& Weeks, 2012) asks participants to indicate the frequency with which they feel lonely in various daily or weekly contexts typical for college students. Ten items tap different contexts (e.g., ``Class is a lonely place for me;'' ``I feel sad and alone at social events''), and participants respond on an ordinal scale ranging from 1 = ``Never'' to 5 = ``Always,'' with the intermediate response options being 2 = ``Hardly ever,'' 3 = ``Sometimes,'' and 4 = ``Most of the time.''
 
-{[}Add scoring info{]}
+A composite score is computed by taking the average of the ten items.
 
 \subsection{Procedure}\label{procedure}
 
@@ -248,11 +248,62 @@ Following the survey questions, participants will view a short debriefing descri
 
 \subsection{Data analysis}\label{data-analysis}
 
-Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and race, counts and proportions.
+Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-A correlation test will be conducted to compute Pearson's \emph{r} for the association between \texttt{neuroticism} and \texttt{loneliness}. Using the \texttt{psych} package (CITE), we will test the hypothesis that the correlation between \texttt{neuroticism} and \texttt{loneliness} is significantly (\(\alpha\) = .001) greater than \emph{r} = .30 in this sample.
+I will compute Pearson's \emph{r} for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \emph{r} = .00 in this sample.
+
+My choice to calculate Pearson's \emph{r} (e.g., versus Spearman's \emph{r}) is based on the fact that the distributions of simulated data for \texttt{neuroticism} and \texttt{loneliness} are both approximately normal, an assumption of Pearson's \emph{r} (see below for relevant computations and visualizations).
+
+\pandocbounded{\includegraphics[keepaspectratio]{reproducibility-project-manuscript_files/figure-latex/histogram-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{reproducibility-project-manuscript_files/figure-latex/histogram-2.pdf}}
 
 \section{Results}\label{results}
+
+Using my simulated data,
+
+Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
+
+\begin{verbatim}
+##   mean(age_sim) SD(age_sim)
+## 1        19.795    1.287291
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 3 x 3
+##   gender_sim                   n   freq
+##   <chr>                    <int>  <dbl>
+## 1 Man                        121 0.302 
+## 2 Nonbinary or genderqueer    13 0.0325
+## 3 Woman                      266 0.665
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 7 x 3
+##   race_ethn_sim                           n   freq
+##   <chr>                               <int>  <dbl>
+## 1 American Indian or Alaska Native        3 0.0075
+## 2 Asian                                  41 0.102 
+## 3 Black or African American              48 0.12  
+## 4 Hispanic or Latino                     55 0.138 
+## 5 Middle Eastern or North African        21 0.0525
+## 6 Native Hawaiian or Pacific Islander     6 0.015 
+## 7 White                                 226 0.565
+\end{verbatim}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  data_simulated$neur_sum_sim and data_simulated$lic_avg_sim
+## t = -1.8885, df = 398, p-value = 0.9702
+## alternative hypothesis: true correlation is greater than 0
+## 95 percent confidence interval:
+##  -0.1752443  1.0000000
+## sample estimates:
+##         cor 
+## -0.09423871
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{reproducibility-project-manuscript_files/figure-latex/unnamed-chunk-5-1.pdf}}
 
 \newpage
 
@@ -264,17 +315,15 @@ A correlation test will be conducted to compute Pearson's \emph{r} for the assoc
 
 \subsection{Demographics}\label{demographics-1}
 
-Participants will be asked the following two demographic questions:
+Participants will be asked the following demographic questions:
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  What is your current age in years?
-\item
-  How would you describe your gender?
-\end{enumerate}
+What is your current age in years? \emph{(free text response with data validation to ensure that a two-digit integer is entered)}
 
-The first question will be a free text response with data validation to ensure that a two-digit integer is entered. The second question will have three possible answer choices, one of which may be selected: (1) Man, (2) Woman, (3) Nonbinary or genderqueer.
+How would you describe your gender? \emph{(three possible answer choices, of which one may be selected: (1) Man, (2) Woman, (3) Nonbinary or genderqueer)}
+
+How would you describe your racial and ethnic background? Select all that apply. \emph{(seven possible answer choices, of which multiple may be selected: (1) American Indian or Alaska Native, (2) Asian, (3) Black or African American, (4) Hispanic or Latino, (5) Middle Eastern or North African, (6), Native Hawaiian or Pacific Islander, (7) White)}
+
+\newpage
 
 \section{Appendix B}\label{appendix-b}
 
@@ -293,9 +342,11 @@ Can be moody
 Remains calm in tense situations
 Gets nervous easily
 
+\newpage
+
 \section{Appendix C}\label{appendix-c}
 
-\subsection{Loneliness in Context Survey (Asher et al., 2009)}\label{loneliness-in-context-survey-asher-et-al.-2009}
+\subsection{Loneliness in Context Questionnaire for College Students (Asher \& Weeks, 2012)}\label{loneliness-in-context-questionnaire-for-college-students-asher-weeks-2012}
 
 Instructions: \emph{Sometimes people can feel lonely in their day-to-day lives. The items in this section ask about your feelings in different contexts. On the scale directly below/beside each item indicate how often you feel the way the item describes. There are no right or wrong answers because people can feel very differently from one another. Just describe how you feel in these contexts (1 = Never, 2 = Hardly Ever, 3 = Sometimes, 4 = Most of the Time, 5 = Always).}
 
