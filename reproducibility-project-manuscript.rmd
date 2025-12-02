@@ -37,7 +37,7 @@ wordcount         : "X"
 bibliography      : "r-references.bib"
 
 floatsintext      : no
-linenumbers       : yes
+linenumbers       : no
 draft             : no
 mask              : no
 
@@ -65,7 +65,7 @@ set.seed(121)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-[Insert intro here - 500 words]
+[Intro - TO COME]
 
 # Methods
 
@@ -126,9 +126,9 @@ hist(data_simulated$lic_avg_sim)
 
 # Results
 
-Using my simulated data, the mean age of participants was `mean(data_simulated$age)` (SD = `sd(data_simulated$age)`). 
+Using my simulated data, the mean age of participants was `r mean(data_simulated$age)` (SD = `r sd(data_simulated$age)`). 
 
-```{r descriptives-age, echo=FALSE, message=FALSE, warning=FALSE}
+```{r descriptives-age, incude = FALSE}
 # Compute mean and SD for age
 data_simulated |>
   summarize(mean(age_sim), SD(age_sim)) 
@@ -151,7 +151,7 @@ cor.test(data_simulated$neur_sum_sim, data_simulated$lic_avg_sim,
          method = "pearson",
          conf.level = 0.95)
 ```
-```{r scatterplot}
+```{r scatterplot, message=FALSE, warning=FALSE}
 # Create scatterplot
 ggplot(data = data_simulated, aes(x = neur_sum_sim, y = lic_avg_sim)) +
   geom_point() + 
@@ -192,12 +192,19 @@ How would you describe your racial and ethnic background? Select all that apply.
 I see myself as someone who...
 
 Is depressed, blue
+
 Is relaxed, handles stress well
+
 Can be tense
+
 Worries a lot
+
 Is emotionally stable, not easily upset
+
 Can be moody
+
 Remains calm in tense situations
+
 Gets nervous easily
 
 \newpage
@@ -208,13 +215,22 @@ Gets nervous easily
 
 *Instructions*: Sometimes people can feel lonely in their day-to-day lives. The items in this section ask about your feelings in different contexts. On the scale directly below/beside each item indicate how often you feel the way the item describes. There are no right or wrong answers because people can feel very differently from one another. Just describe how you feel in these contexts (1 = Never, 2 = Hardly Ever, 3 = Sometimes, 4 = Most of the Time, 5 = Always).
 
-Class is a lonely place for me.   
+Class is a lonely place for me. 
+
 I am lonely in the evening.
+
 My place of residence is a lonely place for me.	
+
 My free time is a lonely time for me.
+
 I feel sad and alone on weekends.
+
 I am lonely with other people. 
+
 I feel sad and alone at social events.
+
 I am lonely during meal times.
+
 I feel sad and alone when I am studying.
+
 Bedtime is a lonely time for me.
