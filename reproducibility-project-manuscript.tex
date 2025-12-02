@@ -194,6 +194,7 @@ Correspondence concerning this article should be addressed to Caroline Armstrong
 \affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Psychology, University of Minnesota}
 
 \abstract{%
+{[}TO COME{]}
 One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
 Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
 One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
@@ -224,7 +225,7 @@ Participants will be asked to indicate their age, gender, and racial and ethnic 
 
 \subsubsection{Big Five Inventory---Neuroticism Subscale}\label{big-five-inventoryneuroticism-subscale}
 
-The Big Five Inventory---Neuroticism subscale (John et al., 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = Agree strongly, with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items are shown in Appendix B.
+The Big Five Inventory---Neuroticism subscale (John et al., 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = ``Agree strongly,'' with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items are shown in Appendix B.
 
 A composite score is computed by summing the eight items.
 
@@ -258,36 +259,42 @@ My choice to calculate Pearson's \emph{r} (e.g., versus Spearman's \emph{r}) is 
 
 \section{Results}\label{results}
 
-Using my simulated data,
-
-Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
+Using my simulated data, the mean age of participants was \texttt{mean(data\_simulated\$age)} (SD = \texttt{sd(data\_simulated\$age)}).
 
 \begin{verbatim}
 ##   mean(age_sim) SD(age_sim)
 ## 1        19.795    1.287291
 \end{verbatim}
 
-\begin{verbatim}
-## # A tibble: 3 x 3
-##   gender_sim                   n   freq
-##   <chr>                    <int>  <dbl>
-## 1 Man                        121 0.302 
-## 2 Nonbinary or genderqueer    13 0.0325
-## 3 Woman                      266 0.665
-\end{verbatim}
+Overall, the sample was made up of mostly White women. Descriptive statistics for gender and racial and ethnic identities endorsed are reported in Table 1.
 
-\begin{verbatim}
-## # A tibble: 7 x 3
-##   race_ethn_sim                           n   freq
-##   <chr>                               <int>  <dbl>
-## 1 American Indian or Alaska Native        3 0.0075
-## 2 Asian                                  41 0.102 
-## 3 Black or African American              48 0.12  
-## 4 Hispanic or Latino                     55 0.138 
-## 5 Middle Eastern or North African        21 0.0525
-## 6 Native Hawaiian or Pacific Islander     6 0.015 
-## 7 White                                 226 0.565
-\end{verbatim}
+\begin{table}[t]
+\caption{\label{tab:demographics-table}\textbf{Table 1. Demographic Characteristics of Simulated Data}} 
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lc}
+\toprule
+\textbf{Characteristic} & \textbf{N = 400}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+Gender &  \\ 
+    Man & 121 (30\%) \\ 
+    Nonbinary or genderqueer & 13 (3.3\%) \\ 
+    Woman & 266 (67\%) \\ 
+Racial and ethnic identities endorsed &  \\ 
+    American Indian or Alaska Native & 3 (0.8\%) \\ 
+    Asian & 41 (10\%) \\ 
+    Black or African American & 48 (12\%) \\ 
+    Hispanic or Latino & 55 (14\%) \\ 
+    Middle Eastern or North African & 21 (5.3\%) \\ 
+    Native Hawaiian or Pacific Islander & 6 (1.5\%) \\ 
+    White & 226 (57\%) \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}n (\%)\\
+\end{minipage}
+\end{table}
+
+The correlation test revealed that there was not a statistically significant correlation between composite neuroticism and loneliness scores (\emph{p} = 0.9702). See Figure 1.
 
 \begin{verbatim}
 ## 
@@ -303,7 +310,7 @@ Descriptive statistics will be computed for demographic variables, including mea
 ## -0.09423871
 \end{verbatim}
 
-\pandocbounded{\includegraphics[keepaspectratio]{reproducibility-project-manuscript_files/figure-latex/unnamed-chunk-5-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{reproducibility-project-manuscript_files/figure-latex/scatterplot-1.pdf}}
 
 \newpage
 
@@ -329,7 +336,7 @@ How would you describe your racial and ethnic background? Select all that apply.
 
 \subsection{Big Five Inventory: Neuroticism Subscale (John et al., 1991)}\label{big-five-inventory-neuroticism-subscale-john-et-al.-1991}
 
-Instructions: \emph{In this section, you will read a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who is talkative? Consider how you think and feel in everyday life and indicate how much you agree or disagree with each statement. Remember that there are no right or wrong answers because people think and feel very differently from one another. Just read each question carefully and answer honestly.}
+\emph{Instructions}: In this section, you will read a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who is talkative? Consider how you think and feel in everyday life and indicate how much you agree or disagree with each statement. Remember that there are no right or wrong answers because people think and feel very differently from one another. Just read each question carefully and answer honestly.
 
 I see myself as someone who\ldots{}
 
@@ -348,7 +355,7 @@ Gets nervous easily
 
 \subsection{Loneliness in Context Questionnaire for College Students (Asher \& Weeks, 2012)}\label{loneliness-in-context-questionnaire-for-college-students-asher-weeks-2012}
 
-Instructions: \emph{Sometimes people can feel lonely in their day-to-day lives. The items in this section ask about your feelings in different contexts. On the scale directly below/beside each item indicate how often you feel the way the item describes. There are no right or wrong answers because people can feel very differently from one another. Just describe how you feel in these contexts (1 = Never, 2 = Hardly Ever, 3 = Sometimes, 4 = Most of the Time, 5 = Always).}
+\emph{Instructions}: Sometimes people can feel lonely in their day-to-day lives. The items in this section ask about your feelings in different contexts. On the scale directly below/beside each item indicate how often you feel the way the item describes. There are no right or wrong answers because people can feel very differently from one another. Just describe how you feel in these contexts (1 = Never, 2 = Hardly Ever, 3 = Sometimes, 4 = Most of the Time, 5 = Always).
 
 Class is a lonely place for me.\\
 I am lonely in the evening.
@@ -360,8 +367,6 @@ I feel sad and alone at social events.
 I am lonely during meal times.
 I feel sad and alone when I am studying.
 Bedtime is a lonely time for me.
-
-When you do feel lonely, how lonely do you feel? \emph{(0 = I never feel lonely, 1 = Slightly lonely, 2 = Somewhat lonely, 3 = Very lonely, 4 = Extremely lonely, 5 = Painfully lonely)}
 
 
 \end{document}
