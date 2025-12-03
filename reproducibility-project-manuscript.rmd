@@ -106,9 +106,8 @@ I will compute Pearson's *r* for the association between the composite neurotici
 
 My choice to calculate Pearson's *r* (e.g., versus Spearman's *r*) is based on the fact that the distributions of simulated data for `neuroticism` and `loneliness` are both approximately normal, an assumption of Pearson's *r* (see below for relevant computations and visualizations). 
 
-```{r load-simulated-data, include = FALSE}
-# Load simulated data
-data_simulated <- read.csv("~/Library/CloudStorage/GoogleDrive-armst874@umn.edu/My Drive/0. Courses/1c. Responsible Research Workflows/Reproducibility Project/neuroticism-loneliness_data-simulated_2025-12-01.csv")
+```{r read-in-data}
+data_simulated <- read.csv("neuroticism-loneliness_data-simulated_2025-12-01.csv")
 ```
 
 ```{r compute-composite-scores}
