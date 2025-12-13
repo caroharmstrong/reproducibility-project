@@ -11,11 +11,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-```{r set_wd, include=FALSE}
-# Set working directory
-setwd("~/Library/CloudStorage/GoogleDrive-armst874@umn.edu/My Drive/0. Courses/1c. Responsible Research Workflows/Reproducibility Project")
-```
-
 ```{r load_libraries, include=FALSE}
 # Load libraries (via {groundhog} package for maximal reproducibility)
 library(groundhog) 
@@ -26,7 +21,7 @@ groundhog.library(faux, "2025-10-31")
 
 ```{r get_session_info}
 # Record info on R version and package versions used
-sessionInfo() # Record this (see Moin video)
+sessionInfo() 
 ```
 
 ```{r read_in_data}
