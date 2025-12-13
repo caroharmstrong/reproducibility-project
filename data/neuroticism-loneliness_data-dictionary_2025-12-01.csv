@@ -1,0 +1,23 @@
+﻿variable,label,scale,subscale,keying,type,value_labels
+participant_id,participant ID,,,,factor,
+age,age,,,,character,
+gender,gender,,,,factor,1 Man 2 Woman 3 Nonbinary or genderqueer
+race_ethn,racial and ethnic background,,,,factor,1 American Indian or Alaska Native 2 Asian 3 Black or African American 4  Hispanic or Latino 5 Middle Eastern or North African 6 Native Hawaiian or Pacific Islander 7 White
+neur_1,"is depressed, blue",Big Five Inventory,Neuroticism,1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_2,"is relaxed, handles stress well",Big Five Inventory,Neuroticism,-1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_3,can be tense,Big Five Inventory,Neuroticism,1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_4,worries a lot,Big Five Inventory,Neuroticism,1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_5,"is emotionally stable, not easily upset",Big Five Inventory,Neuroticism,-1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_6,can be moody,Big Five Inventory,Neuroticism,1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_7,remains calm in tense situations,Big Five Inventory,Neuroticism,-1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+neur_8,gets nervous easily,Big Five Inventory,Neuroticism,1,numeric,1 Disagree strongly 2 Disagree a little 3 Neutral; no opinion 4 Agree a little 5 Agree strongly
+lic_1,Class is a lonely place for me.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_2,I am lonely in the evening.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_3,My place of residence is a lonely place for me.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_4,My free time is a lonely time for me.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_5,I feel sad and alone on the weekends.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_6,I am lonely with other people.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_7,I feel sad and alone at social events.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_8,I am lonely during meal times.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_9,I feel sad and alone when I am studying.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always
+lic_10,Bedtime is a lonely time for me.,Loneliness in Context,,1,numeric,1 Never 2 Hardly ever 3 Sometimes 4 Most of the time 5 Always

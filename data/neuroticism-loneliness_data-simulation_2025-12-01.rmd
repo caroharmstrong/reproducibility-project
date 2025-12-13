@@ -1,0 +1,86 @@
+---
+title: "Data Simulation"
+author: "Caroline Armstrong"
+date: "2025-11-16"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r set_wd, include=FALSE}
+# Set working directory
+setwd("~/Library/CloudStorage/GoogleDrive-armst874@umn.edu/My Drive/0. Courses/1c. Responsible Research Workflows/Reproducibility Project")
+```
+
+```{r load_libraries, include=FALSE}
+# Load libraries (via {groundhog} package for maximal reproducibility)
+library(groundhog) 
+groundhog.library(readr, "2025-10-31")
+groundhog.library(dplyr, "2025-10-31")
+groundhog.library(faux, "2025-10-31")
+```
+
+```{r get_session_info}
+# Record info on R version and package versions used
+sessionInfo() # Record this (see Moin video)
+```
+
+```{r read_in_data}
+dict <- read.csv("neuroticism-loneliness_data-dictionary_2025-12-01.csv")
+```
+
+```{r create_empty_data}
+# Creating empty data frame and populating it with id variable, based on N of sample (say N = 400)
+dat_sim <- data.frame(id = c(1:400))
+```
+
+```{r simulate_demographics}
+# Simulating data for demographic items
+dat_sim$age_sim <- sample(c("18", "19", "20", "21", "22"), size = 400, replace = TRUE, prob = c(.20, .25, .25, .20, .10)) 
+dat_sim$gender_sim <- sample(c("Man", "Woman", "Nonbinary or genderqueer"), size = 400, replace = TRUE, prob = c(.30, .65, .05))
+dat_sim$race_ethn_sim <- sample(c("American Indian or Alaska Native", "Asian", "Black or African American", "Hispanic or Latino", "Middle Eastern or North African", "Native Hawaiian or Pacific Islander", "White"), size = 400, replace = TRUE, prob = c(.01, .12, .13, .15, .05, .01, .65))
+```
+
+
+```{r simulate_neuroticism}
+# Simulating data for neuroticism items (n = 400; say neuroticism will be normally distributed) 
+dat_sim$neur_1_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_2_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_3_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_4_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_5_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_6_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05))
+dat_sim$neur_7_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$neur_8_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05))
+```
+
+```{r simulate_loneliness}
+# Simulating data for loneliness items (n = 400; say loneliness will be normally distributed)
+dat_sim$lic_1_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_2_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_3_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_4_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_5_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_6_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05))
+dat_sim$lic_7_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_8_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05))
+dat_sim$lic_9_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_10_sim <- sample(1:5, size = 400, replace = TRUE, prob = c(.05, .25, .40, .25, .05)) 
+dat_sim$lic_11_sim <- sample(1:6, size = 400, replace = TRUE, prob = c(.02, .05, .25, .40, .25, .03)) 
+```
+
+```{r check}
+# Briefly checking simulation
+dim(dat_sim)
+head(dat_sim)
+```
+
+```{r write_out_data}
+# Save as dataset
+write.csv(dat_sim, "./neuroticism-loneliness_data-simulated_2025-12-01.csv", row.names = FALSE)
+```
+
