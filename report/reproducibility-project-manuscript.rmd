@@ -71,6 +71,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 
 ## Participants
 
+Testing
 Participants will be 400 university students enrolled in a Psychology course who opt to participate in a brief online survey for course credit.  
 
 ## Measures
@@ -107,7 +108,7 @@ I will compute Pearson's *r* for the association between the composite neurotici
 My choice to calculate Pearson's *r* (e.g., versus Spearman's *r*) is based on the fact that the distributions of simulated data for `neuroticism` and `loneliness` are both approximately normal, an assumption of Pearson's *r* (see below for relevant computations and visualizations). 
 
 ```{r read-in-data}
-data_simulated <- read.csv("~/data/neuroticism-loneliness_data-simulated_2025-12-01.csv")
+data_simulated <- read.csv("../data/neuroticism-loneliness_data-simulated_2025-12-01.csv")
 ```
 
 ```{r compute-composite-scores}
