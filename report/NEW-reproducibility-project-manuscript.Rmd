@@ -90,7 +90,7 @@ A composite score is computed by taking the average of the eight items (after ap
 
 ### Loneliness in Context Questionnaire for College Students
 
-The Loneliness in Context Questionnaire for College Students (Asher & Weeks, 2012) asks participants to indicate the frequency with which they feel lonely in various daily or weekly contexts typical for college students. Ten items tap different contexts (e.g., "Class is a lonely place for me;" "I feel sad and alone at social events"), and participants respond on an ordinal scale ranging from 1 = "Never" to 5 = "Always," with the intermediate response options being 2 = "Hardly ever," 3 = "Sometimes," and 4 = "Most of the time."
+The Loneliness in Context Questionnaire for College Students [@asher2013] asks participants to indicate the frequency with which they feel lonely in various daily or weekly contexts typical for college students. Ten items tap different contexts (e.g., "Class is a lonely place for me;" "I feel sad and alone at social events"), and participants respond on an ordinal scale ranging from 1 = "Never" to 5 = "Always," with the intermediate response options being 2 = "Hardly ever," 3 = "Sometimes," and 4 = "Most of the time."
 
 A composite score is computed by taking the average of the ten items.
 
@@ -166,17 +166,17 @@ I see myself as someone who...
 
 Is depressed, blue
 
-Is relaxed, handles stress well*
+Is relaxed, handles stress well\*
 
 Can be tense
 
 Worries a lot
 
-Is emotionally stable, not easily upset*
+Is emotionally stable, not easily upset\*
 
 Can be moody
 
-Remains calm in tense situations*
+Remains calm in tense situations\*
 
 Gets nervous easily
 
@@ -209,4 +209,3 @@ I am lonely during meal times.
 I feel sad and alone when I am studying.
 
 Bedtime is a lonely time for me.
-
