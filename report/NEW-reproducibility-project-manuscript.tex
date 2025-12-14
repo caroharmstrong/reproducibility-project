@@ -254,9 +254,9 @@ Participants will be asked to indicate their age, gender, and racial and ethnic 
 
 \subsubsection{Big Five Inventory---Neuroticism Subscale}\label{big-five-inventoryneuroticism-subscale}
 
-The Big Five Inventory---Neuroticism subscale (John, Donahue, \& Kentle, 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = ``Agree strongly,'' with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items are shown in Appendix B.
+The Big Five Inventory---Neuroticism subscale (John, Donahue, \& Kentle, 1991) asks participants to indicate the extent to which they agree or disagree with eight statements about their personal characteristics or thinking and feeling tendencies in day-to-day life (e.g., ``I see myself as someone who is depressed, blue;'' ``I see myself as someone who worries a lot''). The response scale is an ordinal scale ranging from 1 = ``Disagree strongly'' to 5 = ``Agree strongly,'' with the intermediate response options being 2 = ``Disagree a little,''3 = ``Neutral; no opinion,'' and 4 = ``Agree a little.'' The complete scale instructions and items (also indicating which items are reverse scored) are shown in Appendix B.
 
-A composite score is computed by summing the eight items.
+A composite score is computed by taking the average of the eight items (after appropriate reverse scoring is done).
 
 \subsubsection{Loneliness in Context Questionnaire for College Students}\label{loneliness-in-context-questionnaire-for-college-students}
 
@@ -278,7 +278,15 @@ Following the survey questions, participants will view a short debriefing descri
 
 \subsection{Data analysis}\label{data-analysis}
 
-We used R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025) for all our analyses.
+The following R packages will be used for my analyses (and the writing and producing of this report using the \texttt{papaja} template): R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025).
+
+Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
+
+I will compute Pearson's \emph{r} for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \emph{r} = .00 in this sample.
+
+My choice to calculate Pearson's \emph{r} (e.g., versus Spearman's \emph{r}) is based on the fact that the distributions of simulated data for \texttt{neuroticism} and \texttt{loneliness} are both approximately normal, an assumption of Pearson's \emph{r} (see below for relevant computations and visualizations).
+
+\pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histogram-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histogram-2.pdf}}
 
 \section{Results}\label{results}
 
