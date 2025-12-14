@@ -47,17 +47,28 @@ output            : papaja::apa6_pdf
 ---
 
 ```{r setup, include = FALSE}
+# Load libraries and set up such that packages used get cited
+library(apaTables)
+library(dplyr)
+library(ggplot2)
+library(gtsummary)
 library("papaja")
-r_refs("r-references.bib")
+library(psych)
+r_refs("r-references.bib") # setting up such that packages used get cited
 ```
 
 ```{r analysis-preferences}
-# Seed for random number generation
-set.seed(42)
+# Setting seed for reproducible results (seed for random number generation)
+set.seed(121)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
+```{r read-in-data}
+# Read in simulated data (make sure you have downloaded full ZIP from GitHub and opened R project to avoid file path issues when reading in this data)
+data_simulated <- read.csv("../data/neuroticism-loneliness_data-simulated_2025-12-01.csv")
+```
 
+[Intro - TO COME]
 
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
