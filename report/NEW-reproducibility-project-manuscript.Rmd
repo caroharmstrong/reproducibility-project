@@ -185,7 +185,7 @@ ggplot(data_simulated, aes(x = lic_avg_sim)) +
 ```{r figure-3, echo=FALSE, message=FALSE, warning=FALSE}
 # Create scatterplot
 ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
-  geom_point() + 
+  geom_point(alpha = 0.25) + 
   labs(title = "Figure 3", subtitle = "Loneliness vs. Neuroticism (Simulated Data)", x = "Mean neuroticism score", y = "Mean loneliness score") + 
   theme_apa() +
   theme(plot.title = element_text(face = "bold", hjust = 0, size = 12), plot.subtitle = element_text(face = "italic", hjust = 0, size = 12)) 
