@@ -108,7 +108,7 @@ Following the survey questions, participants will view a short debriefing descri
 
 ## Data analysis
 
-The following R packages will be used for my analyses (and the writing and producing of this report using the `papaja` template): `r cite_r("r-references.bib")`.
+The following R packages will be used for my analyses (and the writing and producing of this report using the `papaja` template): `r cite_r("r-references.bib")`. Some code was inspired by [@girard2023].
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
@@ -119,7 +119,10 @@ My choice to calculate Pearson's *r* (e.g., versus Spearman's *r*) is based on t
 ```{r compute-composite-scores}
 # Compute composite neuroticism score and composite loneliness score; incorporate these into dataset
 data_simulated = data_simulated |> 
-  mutate(neur_sum_sim = neur_1_sim + neur_2_sim + neur_3_sim + neur_4_sim + neur_5_sim + neur_6_sim + neur_7_sim + neur_8_sim,
+  mutate(neur_2_sim_r = recode(neur_2_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
+         neur_5_sim_r = recode(neur_5_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
+         neur_7_sim_r = recode(neur_7_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
+        neur_sum_sim = rowMeans(pick(neur_1_sim, neur_2_sim_r, neur_3_sim, neur_4_sim, neur_5_sim_r,  neur_6_sim, neur_7_sim_r, neur_8_sim)), # code idea thanks to Girard (2023)
          lic_avg_sim = rowMeans(pick(starts_with("lic")))) # code idea thanks to Girard (2023)
 ```
 
