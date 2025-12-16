@@ -1,0 +1,27 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[t]
+\caption{\label{tab:demographics-table}\textbf{Table 1. Demographic Characteristics of Simulated Data}}
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lc}
+\toprule
+\textbf{Characteristic} & \textbf{N = 400}\textsuperscript{\textit{1}} \\
+\midrule\addlinespace[2.5pt]
+Gender &  \\
+    Man & 120 (30\%) \\
+    Nonbinary or genderqueer & 18 (4.5\%) \\
+    Woman & 262 (66\%) \\
+Racial and ethnic identities endorsed &  \\
+    American Indian or Alaska Native & 9 (2.3\%) \\
+    Asian & 48 (12\%) \\
+    Black or African American & 37 (9.3\%) \\
+    Hispanic or Latino & 55 (14\%) \\
+    Middle Eastern or North African & 24 (6.0\%) \\
+    Native Hawaiian or Pacific Islander & 3 (0.8\%) \\
+    White & 224 (56\%) \\
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}n (\%)\\
+\end{minipage}
+\end{table*}

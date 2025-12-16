@@ -278,17 +278,51 @@ Following the survey questions, participants will view a short debriefing descri
 
 \subsection{Data analysis}\label{data-analysis}
 
-The following R packages will be used for my analyses (and the writing and producing of this report using the \texttt{papaja} template): R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025). Some code was inspired by (Girard, 2023).
+The following will be used for my analyses (and the writing and producing of this report using the \texttt{papaja} template): R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025). Some code was inspired by (Girard, 2023).
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-I will compute Spearman's \emph{r} for the association between the mean neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \emph{r} = .00 in this sample.
+I will compute Spearman's \(\rho\) for the association between the mean neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \(\rho\) = .00 in this sample.
 
-I chose to calculate Spearman's \emph{r} because, although the distributions of simulated data for the mean neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's \emph{r}; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's \emph{r} would be a more appropriate choice; (Schober, Boer, \& Schwarte, 2018)).
+I chose to calculate Spearman's \(\rho\) because, although the distributions of simulated data for the mean neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's \emph{r}; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's \(\rho\) would be a more appropriate choice; (Schober, Boer, \& Schwarte, 2018)).
 
 \pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histograms-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histograms-2.pdf}}
 
 \section{Results}\label{results}
+
+Using my simulated data, the mean age of participants was 19.71 (SD = 1.31).
+
+Overall, the sample was made up of mostly White women. Descriptive statistics for gender and racial and ethnic identities endorsed are reported in Table 1.
+
+\begin{table}[t]
+\caption{\label{tab:demographics-table}\textbf{Table 1. Demographic Characteristics of Simulated Data}} 
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lc}
+\toprule
+\textbf{Characteristic} & \textbf{N = 400}\textsuperscript{\textit{1}} \\ 
+\midrule\addlinespace[2.5pt]
+Gender &  \\ 
+    Man & 120 (30\%) \\ 
+    Nonbinary or genderqueer & 18 (4.5\%) \\ 
+    Woman & 262 (66\%) \\ 
+Racial and ethnic identities endorsed &  \\ 
+    American Indian or Alaska Native & 9 (2.3\%) \\ 
+    Asian & 48 (12\%) \\ 
+    Black or African American & 37 (9.3\%) \\ 
+    Hispanic or Latino & 55 (14\%) \\ 
+    Middle Eastern or North African & 24 (6.0\%) \\ 
+    Native Hawaiian or Pacific Islander & 3 (0.8\%) \\ 
+    White & 224 (56\%) \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\textsuperscript{\textit{1}}n (\%)\\
+\end{minipage}
+\end{table}
+
+The correlation test revealed that there was not a statistically significant correlation between composite neuroticism and loneliness scores (\(\rho\) = 0.00; \emph{p} = 0.51). See Figure 1.
+
+\pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/scatterplot-1.pdf}}
 
 \section{Discussion}\label{discussion}
 

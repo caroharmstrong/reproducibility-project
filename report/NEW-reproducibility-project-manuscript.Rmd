@@ -54,6 +54,7 @@ library(ggplot2)
 library(gtsummary)
 library("papaja")
 library(psych)
+library(stats)
 r_refs("r-references.bib") # setting up such that packages used get cited
 ```
 
@@ -108,13 +109,13 @@ Following the survey questions, participants will view a short debriefing descri
 
 ## Data analysis
 
-The following R packages will be used for my analyses (and the writing and producing of this report using the `papaja` template): `r cite_r("r-references.bib")`. Some code was inspired by [@girard2023].
+The following will be used for my analyses (and the writing and producing of this report using the `papaja` template): `r cite_r("r-references.bib")`. Some code was inspired by [@girard2023].
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-I will compute Spearman's *r* for the association between the mean neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than *r* = .00 in this sample.
+I will compute Spearman's $\rho$ for the association between the mean neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than $\rho$ = .00 in this sample.
 
-I chose to calculate Spearman's *r* because, although the distributions of simulated data for the mean neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's *r*; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's *r* would be a more appropriate choice; [@schober2018]).
+I chose to calculate Spearman's $\rho$ because, although the distributions of simulated data for the mean neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's *r*; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's $\rho$ would be a more appropriate choice; [@schober2018]).
 
 ```{r compute-composite-scores}
 # Compute composite neuroticism score and composite loneliness score; incorporate these into dataset
@@ -139,6 +140,38 @@ ggplot(data_simulated, aes(x = lic_avg_sim)) +
 ```
 
 # Results
+
+Using my simulated data, the mean age of participants was `r mean(data_simulated$age)` (SD = `r sd(data_simulated$age)`).
+
+Overall, the sample was made up of mostly White women. Descriptive statistics for gender and racial and ethnic identities endorsed are reported in Table 1.
+
+```{r demographics-table}
+data_simulated |> tbl_summary(include = c(gender_sim, race_ethn_sim),
+                              label = list(gender_sim = "Gender", race_ethn_sim = "Racial and ethnic identities endorsed")) |>
+                  modify_caption("**Table 1. Demographic Characteristics of Simulated Data**") 
+```
+
+```{r correlation-test, echo = FALSE, include = FALSE}
+# Compute Spearman's r
+cor_test = cor.test(data_simulated$neur_avg_sim, data_simulated$lic_avg_sim,
+         alternative = "greater",
+         method = "spearman",
+         conf.level = 0.95)
+cor_test
+```
+
+The correlation test revealed that there was not a statistically significant correlation between composite neuroticism and loneliness scores ($\rho$ = `r cor_test$estimate`; *p* = `r cor_test$p.value`). See Figure 1.
+
+```{r scatterplot, message=FALSE, warning=FALSE}
+# Create scatterplot
+ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
+  geom_point() + 
+  theme_apa() +
+  xlab("Neuroticism") +
+  ylab("Loneliness") + 
+  labs(caption = "Figure 1. Loneliness vs. Neuroticism (Simulated Data)") +
+  theme(plot.caption = element_text(hjust = 0.1, size = 14))
+```
 
 # Discussion
 
