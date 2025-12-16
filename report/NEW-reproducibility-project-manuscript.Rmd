@@ -112,9 +112,9 @@ The following R packages will be used for my analyses (and the writing and produ
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-I will compute Spearman's *r* for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than *r* = .00 in this sample.
+I will compute Spearman's *r* for the association between the mean neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than *r* = .00 in this sample.
 
-I chose to calculate Spearman's *r* because, although the distributions of simulated data for the composite neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's *r*; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's *r* would be a more appropriate choice; [@schober2018]).
+I chose to calculate Spearman's *r* because, although the distributions of simulated data for the mean neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's *r*; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's *r* would be a more appropriate choice; [@schober2018]).
 
 ```{r compute-composite-scores}
 # Compute composite neuroticism score and composite loneliness score; incorporate these into dataset
@@ -122,14 +122,20 @@ data_simulated = data_simulated |>
   mutate(neur_2_sim_r = recode(neur_2_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
          neur_5_sim_r = recode(neur_5_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
          neur_7_sim_r = recode(neur_7_sim, '1'= 5, '2' = 4, '3' = 3, '4' = 2, '5' = 1),
-        neur_sum_sim = rowMeans(pick(neur_1_sim, neur_2_sim_r, neur_3_sim, neur_4_sim, neur_5_sim_r,  neur_6_sim, neur_7_sim_r, neur_8_sim)), # code idea thanks to Girard (2023)
+        neur_avg_sim = rowMeans(pick(neur_1_sim, neur_2_sim_r, neur_3_sim, neur_4_sim, neur_5_sim_r,  neur_6_sim, neur_7_sim_r, neur_8_sim)), # code idea thanks to Girard (2023)
          lic_avg_sim = rowMeans(pick(starts_with("lic")))) # code idea thanks to Girard (2023)
 ```
 
-```{r histogram}
+```{r histograms}
 # Visualize distribution of composite neuroticism score and composite loneliness score
-hist(data_simulated$neur_sum_sim)
-hist(data_simulated$lic_avg_sim)
+ggplot(data_simulated, aes(x = neur_avg_sim)) + 
+  geom_histogram(bins = 20, fill = "black") + 
+  theme_apa() +
+  xlab("Mean neuroticism score")
+ggplot(data_simulated, aes(x = lic_avg_sim)) + 
+  geom_histogram(bins = 20, fill = "black") + 
+  theme_apa() +
+  xlab("Mean loneliness score")
 ```
 
 # Results
