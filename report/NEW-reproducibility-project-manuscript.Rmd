@@ -69,7 +69,13 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 data_simulated <- read.csv("../data/neuroticism-loneliness_data-simulated_2025-12-01.csv")
 ```
 
-[Intro - TO COME]
+There is evidence that loneliness among emerging adults, including college students, has risen from the late 1970s to today (Buecker et al., 2021). A number of social changes have been suggested to be involved in this trend, including greater job instability and changes to communication patterns introduced by innovations in technology (Buecker et al., 2021). Examining such changes and the degree of evidence supporting their possible contributions to a “loneliness epidemic” (Killeen, 2002) is an important aim of research, such that interventions and policies might be designed to support young people’s social connection and such that those supporting them in formal and informal roles (e.g., educators, parents, friends, coaches, and spiritual leaders) might be informed of potential contributors to loneliness and potential strategies to help mitigate them.  
+
+At the same time, it may be equally important to examine factors that tend to be comparatively more stable over time, including individual personality traits (Costa et al., 1986), as variables contributing to emerging adults’ loneliness in and of themselves and as variables moderating the influence of other (e.g., social) variables on loneliness. One personality trait, neuroticism, is considered part of the five-factor model of personality (McCrae & John, 1992) and can generally be defined as a disposition “characterized by a chronic level of emotional instability and proneness to psychological distress” (APA, 2018). Neuroticism is hypothesized to be a vulnerability factor for anxiety and mood disorders (Barlow et al., 2014), in which loneliness is a central feature. Loneliness has also been shown to be a temporal antecedent of these disorders (e.g., Lim et al., 2016). These links as well as general characterizations—both lay and scientific—of neuroticism and loneliness suggest that the two may be closely interwoven. These demonstrated links to mental health outcomes also highlight the importance of examining each and taking steps to parse them conceptually. In fact, neuroticism and loneliness may be “sibling constructs” or perhaps cousin constructs, and empirically examining their correlations is important for describing their nomological networks and enhancing conceptual clarity in the fields that study these constructs (Lawson & Robins, 2021).  
+
+Some research has already taken such steps. One large meta-analysis (*k* = 113, total *n* = 93, 668; Buecker et al., 2020) examined the connection between neuroticism and loneliness and found that they were positively correlated, r = .358. However, a large number of loneliness measures suffer from the limitation of asking about hypothesized causes of loneliness rather than “pure” loneliness. Accordingly, there is a need to examine the correlation between neuroticism and loneliness using a loneliness measure that merely asks one how lonely they feel. The Loneliness in Context Questionnaire (Asher & Weeks, 2013) was developed to address this shortcoming and is a promising instrument for just assessing loneliness itself, whatever an individual’s interpretation of “lonely” is. There is also a need to examine this correlation, using this kind of loneliness measure, specifically within a sample of college students in order to better understand this association in this particular population—where mental health issues are particularly prevalent (Pedrelli et al., 2015)—and thereby inform tailored approaches to support this population’s mental health.
+
+Accordingly, the proposed research seeks to examine the correlation between neuroticism and loneliness, specifically using the Loneliness in Context Questionnaire, and specifically surveying college students. It tests the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than $\rho$ = .00. 
 
 # Methods
 
@@ -133,12 +139,6 @@ Using my simulated data, the mean age of participants was `r mean(data_simulated
 
 Overall, the sample was made up of mostly White women. Descriptive statistics for gender and racial and ethnic identities endorsed are reported in Table 1.
 
-```{r demographics-table}
-data_simulated |> tbl_summary(include = c(gender_sim, race_ethn_sim),
-                              label = list(gender_sim = "Gender", race_ethn_sim = "Racial and ethnic identities endorsed")) |>
-                  modify_caption("**Demographic Characteristics of Simulated Data**") 
-```
-
 ```{r correlation-test, echo = FALSE, include = FALSE}
 # Compute Spearman's r
 cor_test = cor.test(data_simulated$neur_avg_sim, data_simulated$lic_avg_sim,
@@ -189,6 +189,14 @@ ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
   labs(title = "Figure 3", subtitle = "Loneliness vs. Neuroticism (Simulated Data)", x = "Mean neuroticism score", y = "Mean loneliness score") + 
   theme_apa() +
   theme(plot.title = element_text(face = "bold", hjust = 0, size = 12), plot.subtitle = element_text(face = "italic", hjust = 0, size = 12)) 
+```
+
+\newpage
+
+```{r demographics-table}
+data_simulated |> tbl_summary(include = c(gender_sim, race_ethn_sim),
+                              label = list(gender_sim = "Gender", race_ethn_sim = "Racial and ethnic identities endorsed")) |>
+                  modify_caption("**Demographic Characteristics of Simulated Data**") 
 ```
 
 \newpage
