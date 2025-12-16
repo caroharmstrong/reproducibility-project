@@ -127,18 +127,6 @@ data_simulated = data_simulated |>
          lic_avg_sim = rowMeans(pick(starts_with("lic")))) # code idea thanks to Girard (2023)
 ```
 
-```{r histograms}
-# Visualize distribution of composite neuroticism score and composite loneliness score
-ggplot(data_simulated, aes(x = neur_avg_sim)) + 
-  geom_histogram(bins = 20, fill = "black") + 
-  theme_apa() +
-  xlab("Mean neuroticism score")
-ggplot(data_simulated, aes(x = lic_avg_sim)) + 
-  geom_histogram(bins = 20, fill = "black") + 
-  theme_apa() +
-  xlab("Mean loneliness score")
-```
-
 # Results
 
 Using my simulated data, the mean age of participants was `r mean(data_simulated$age)` (SD = `r sd(data_simulated$age)`).
@@ -148,7 +136,7 @@ Overall, the sample was made up of mostly White women. Descriptive statistics fo
 ```{r demographics-table}
 data_simulated |> tbl_summary(include = c(gender_sim, race_ethn_sim),
                               label = list(gender_sim = "Gender", race_ethn_sim = "Racial and ethnic identities endorsed")) |>
-                  modify_caption("**Table 1. Demographic Characteristics of Simulated Data**") 
+                  modify_caption("**Demographic Characteristics of Simulated Data**") 
 ```
 
 ```{r correlation-test, echo = FALSE, include = FALSE}
@@ -160,18 +148,7 @@ cor_test = cor.test(data_simulated$neur_avg_sim, data_simulated$lic_avg_sim,
 cor_test
 ```
 
-The correlation test revealed that there was not a statistically significant correlation between composite neuroticism and loneliness scores ($\rho$ = `r cor_test$estimate`; *p* = `r cor_test$p.value`). See Figure 1.
-
-```{r scatterplot, message=FALSE, warning=FALSE}
-# Create scatterplot
-ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
-  geom_point() + 
-  theme_apa() +
-  xlab("Neuroticism") +
-  ylab("Loneliness") + 
-  labs(caption = "Figure 1. Loneliness vs. Neuroticism (Simulated Data)") +
-  theme(plot.caption = element_text(hjust = 0.1, size = 14))
-```
+The correlation test revealed that there was not a statistically significant correlation between composite neuroticism and loneliness scores ($\rho$ = `r cor_test$estimate`; *p* = `r cor_test$p.value`). See Figure 3.
 
 # Discussion
 
@@ -184,7 +161,40 @@ ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
 
 \newpage
 
+```{r figure-1, echo=FALSE, message=FALSE, warning=FALSE}
+# Visualize distribution of composite neuroticism score and composite loneliness score
+ggplot(data_simulated, aes(x = neur_avg_sim)) + 
+  geom_histogram(bins = 20, fill = "black") + 
+  labs(title = "Figure 1", subtitle = "Distribution of Mean Neuroticism Score", x = "Mean neuroticism score", y = "Count") +
+  theme_apa() +
+  theme(plot.title = element_text(face = "bold", hjust = 0, size = 12), plot.subtitle = element_text(face = "italic", hjust = 0, size = 12)) 
+```
+
+\newpage
+
+```{r figure-2, echo=FALSE, message=FALSE, warning=FALSE}
+ggplot(data_simulated, aes(x = lic_avg_sim)) + 
+  geom_histogram(bins = 20, fill = "black") + 
+  labs(title = "Figure 2", subtitle = "Distribution of Mean Loneliness Score", x = "Mean loneliness score", y = "Count") +
+  theme_apa() +
+  theme(plot.title = element_text(face = "bold", hjust = 0, size = 12), plot.subtitle = element_text(face = "italic", hjust = 0, size = 12)) 
+```
+
+\newpage
+
+```{r figure-3, echo=FALSE, message=FALSE, warning=FALSE}
+# Create scatterplot
+ggplot(data = data_simulated, aes(x = neur_avg_sim, y = lic_avg_sim)) +
+  geom_point() + 
+  labs(title = "Figure 3", subtitle = "Loneliness vs. Neuroticism (Simulated Data)", x = "Mean neuroticism score", y = "Mean loneliness score") + 
+  theme_apa() +
+  theme(plot.title = element_text(face = "bold", hjust = 0, size = 12), plot.subtitle = element_text(face = "italic", hjust = 0, size = 12)) 
+```
+
+\newpage
+
 # Appendix A
+
 
 ## Demographics
 

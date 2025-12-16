@@ -1,7 +1,7 @@
 \begin{table*}[hbt]
 \ifnextchar[{\eatarg}{}
 [t]
-\caption{\label{tab:demographics-table}\textbf{Table 1. Demographic Characteristics of Simulated Data}}
+\caption{\label{tab:demographics-table}\textbf{Demographic Characteristics of Simulated Data}}
 \fontsize{12.0pt}{14.0pt}\selectfont
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lc}
 \toprule
