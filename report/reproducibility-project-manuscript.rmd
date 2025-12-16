@@ -139,3 +139,4 @@ ggplot(data = data_simulated, aes(x = neur_sum_sim, y = lic_avg_sim)) +
 
 ::: {#refs custom-style="Bibliography"}
 :::
+

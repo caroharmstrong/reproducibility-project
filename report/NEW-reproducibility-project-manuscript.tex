@@ -278,13 +278,13 @@ Following the survey questions, participants will view a short debriefing descri
 
 \subsection{Data analysis}\label{data-analysis}
 
-The following R packages will be used for my analyses (and the writing and producing of this report using the \texttt{papaja} template): R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025). Some code was inspired by (Girard, 2023, March 18).
+The following R packages will be used for my analyses (and the writing and producing of this report using the \texttt{papaja} template): R (Version 4.5.2; R Core Team, 2025) and the R-packages \emph{apaTables} (Version 2.0.8; Stanley, 2021), \emph{dplyr} (Version 1.1.4; Wickham, François, Henry, Müller, \& Vaughan, 2023), \emph{faux} (Version 1.2.3; DeBruine, 2025), \emph{ggplot2} (Version 4.0.1; Wickham, 2016), \emph{groundhog} (Version 3.2.3; Simonsohn \& Gruson, 2025), \emph{gtsummary} (Version 2.5.0; Sjoberg, Whiting, Curry, Lavery, \& Larmarange, 2021), \emph{papaja} (Version 0.1.4; Aust \& Barth, 2025), \emph{psych} (Version 2.5.6; William Revelle, 2025), \emph{readr} (Version 2.1.5; Wickham, Hester, \& Bryan, 2024), and \emph{tinylabels} (Version 0.2.5; Barth, 2025). Some code was inspired by (Girard, 2023).
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-I will compute Pearson's \emph{r} for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \emph{r} = .00 in this sample.
+I will compute Spearman's \emph{r} for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly (\(\alpha\) = .001) greater than \emph{r} = .00 in this sample.
 
-My choice to calculate Pearson's \emph{r} (e.g., versus Spearman's \emph{r}) is based on the fact that the distributions of simulated data for \texttt{neuroticism} and \texttt{loneliness} are both approximately normal, an assumption of Pearson's \emph{r} (see below for relevant computations and visualizations).
+I chose to calculate Spearman's \emph{r} because, although the distributions of simulated data for the composite neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's \emph{r}; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's \emph{r} would be a more appropriate choice; (Schober, Boer, \& Schwarte, 2018)).
 
 \pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histogram-1.pdf}} \pandocbounded{\includegraphics[keepaspectratio]{NEW-reproducibility-project-manuscript_files/figure-latex/histogram-2.pdf}}
 
@@ -311,13 +311,16 @@ Barth, M. (2025). \emph{{tinylabels}: Lightweight variable labels}. \url{https:/
 DeBruine, L. (2025). \emph{Faux: Simulation for factorial designs}. Zenodo. \url{https://doi.org/10.5281/zenodo.2669586}
 
 \bibitem[\citeproctext]{ref-girard2023}
-Girard, J. (2023, March 18). Row-wise means in dplyr. In \emph{AffComLab}. Retrieved from \url{https://affcom.ku.edu/posts/rowwise2023/}
+Girard, J. (2023). \emph{Row-wise means in dplyr {\textendash} AffCom Lab}. Retrieved from \url{https://affcom.ku.edu/posts/rowwise2023/}
 
 \bibitem[\citeproctext]{ref-john1991}
 John, O. P., Donahue, E. M., \& Kentle, R. L. (1991). \emph{Big Five Inventory}. {[}Database record{]}. APA PsycTests. \url{https://doi.org/10.1037/t07550-000}
 
 \bibitem[\citeproctext]{ref-R-base}
 R Core Team. (2025). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\bibitem[\citeproctext]{ref-schober2018}
+Schober, P., Boer, C., \& Schwarte, L. A. (2018). Correlation coefficients: Appropriate use and interpretation. \emph{Anesthesia \& Analgesia}, \emph{126}(5), 1763. \url{https://doi.org/10.1213/ANE.0000000000002864}
 
 \bibitem[\citeproctext]{ref-R-groundhog}
 Simonsohn, U., \& Gruson, H. (2025). \emph{Groundhog: Version-control for CRAN, GitHub, and GitLab packages}. \url{https://doi.org/10.32614/CRAN.package.groundhog}

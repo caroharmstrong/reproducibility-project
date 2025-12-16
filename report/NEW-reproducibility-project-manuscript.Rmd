@@ -64,7 +64,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
 ```{r read-in-data}
-# Read in simulated data (make sure you have downloaded full ZIP from GitHub and opened R project to avoid file path issues when reading in this data)
+# Read in simulated data (make sure you have downloaded full Zip from GitHub and opened R project to avoid file path issues when reading in this data)
 data_simulated <- read.csv("../data/neuroticism-loneliness_data-simulated_2025-12-01.csv")
 ```
 
@@ -112,9 +112,9 @@ The following R packages will be used for my analyses (and the writing and produ
 
 Descriptive statistics will be computed for demographic variables, including mean and standard deviation for age and, for gender and racial and ethnic identities endorsed, counts and proportions.
 
-I will compute Pearson's *r* for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than *r* = .00 in this sample.
+I will compute Spearman's *r* for the association between the composite neuroticism and loneliness scores and test the hypothesis that this correlation is significantly ($\alpha$ = .001) greater than *r* = .00 in this sample.
 
-My choice to calculate Pearson's *r* (e.g., versus Spearman's *r*) is based on the fact that the distributions of simulated data for `neuroticism` and `loneliness` are both approximately normal, an assumption of Pearson's *r* (see below for relevant computations and visualizations).
+I chose to calculate Spearman's *r* because, although the distributions of simulated data for the composite neuroticism and loneliness scores are both approximately normal (an assumption of Pearson's *r*; see below for relevant computations and visualizations), neuroticism and loneliness were measured on ordinal scales (indicating Spearman's *r* would be a more appropriate choice; [@schober2018]).
 
 ```{r compute-composite-scores}
 # Compute composite neuroticism score and composite loneliness score; incorporate these into dataset
